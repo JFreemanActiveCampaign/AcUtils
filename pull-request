@@ -1,0 +1,16 @@
+#!/bin/bash
+git push
+default_target=$CURRENT_BRANCH
+git_username=`git config user.username`
+if [ -z $git_username ]
+	then
+		echo -n "Please enter your github username: "
+		read git_username
+		git config user.username $git_username
+fi
+if [ -z ${1+x} ]; then target=$default_target; else target="$1"; fi
+current_branch=`git status | head -n 1 | awk '{ print $3 }'`
+current_repo=`git remote -v | grep ActiveCampaign | head -n 1 | awk '{ print substr($2, index($2, "github.com") + 11); }' | rev | cut -c 5- | rev`
+url="https://github.com/"$current_repo"/compare/"$target"..."$git_username":"$current_branch"?expand=1"
+echo $url
+open $url
