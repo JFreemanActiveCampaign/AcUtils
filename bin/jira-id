@@ -1,0 +1,7 @@
+#!/bin/bash
+#Find last pivotal ID
+pid=`git log -1 | grep "DEVJIRA-"`
+#trim whitespaces and copy to clipboard
+pid=`echo -n "${pid}" | sed -e 's/^[ \t]*//' | tr -d '\n'`
+echo -n "${pid}" | pbcopy
+echo -n "${pid}" | tr -d '\n'
