@@ -4,7 +4,7 @@
 
 Usage `pull-request <tracking-branch>`
 
-Pushes your changes and opens a PR directly in github. A default tracking-branch can be defined by exporting the `$CURRENT_BRANCH` variable in your .bashrc
+Pushes your changes and opens a PR directly in github. A default tracking-branch can be defined by putting `export CURRENT_BRANCH="version-8.3"` in your .bash_profile
 
 ## jira-id
 
