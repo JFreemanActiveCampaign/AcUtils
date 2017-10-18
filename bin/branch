@@ -1,0 +1,13 @@
+#! /bin/bash
+if [ "$#" -lt 2 ] 
+then
+	echo >&2 "usage: branch upstream-branch origin-branch"
+	exit 1
+fi
+
+UPSTREAM=$1
+BRANCH=$2
+
+git fetch ActiveCampaign
+git checkout -b $BRANCH ActiveCampaign/$UPSTREAM
+git push -u origin $BRANCH
