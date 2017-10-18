@@ -1,5 +1,6 @@
 #!/bin/bash
 git push
+sleep 1
 default_target=$CURRENT_BRANCH
 git_username=`git config user.githubusername`
 if [ -z $git_username ]
