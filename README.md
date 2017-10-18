@@ -10,4 +10,4 @@ Pushes your changes and opens a PR directly in github. A default tracking-branch
 
 Usage `jira-id`
 
-Looks in the git log for the last used JIRA ID. It will then echo it and copy it to the clipboard
+Looks in the git log for the last used JIRA ID. It will then echo it and copy it to the clipboard. Add `command J r!jira-id` to your .vimrc to insert the last used JIRA ID into your commit message by running `:J`
